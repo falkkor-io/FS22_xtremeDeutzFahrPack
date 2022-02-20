@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<crawler>
+    <file name="vehicles/series9XBull/wheels/crawlers/lizard/crawler.i3d" leftNode="3|1" rightNode="3|0"/>
+    <scrollerNodes>
+        <scrollerNode node="0" scrollSpeed="0.149" scrollLength="6.69" shaderParameterName="offsetUV" shaderParameterComponent="1"/>
+    </scrollerNodes>
+    <rotatingParts>
+        <rotatingPart node="1" radius="0.49" />
+        <rotatingPart node="2" radius="0.49" />
+        <rotatingPart node="3" radius="0.162" />
+        <rotatingPart node="4" radius="0.162" />
+    </rotatingParts>
+</crawler>

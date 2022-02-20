@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="63">
+    <author>Falkkor</author>
+    <version>2.0.0.0</version>
+    <title>
+        <en>Xtreme Deutz-Fahr Pack</en>
+    </title>
+    <description>
+        <en>
+            <![CDATA[This mod pack for Farming Simulator 22 features your favorite Deutz-Fahr machinery but now enhanced with eXtra power, eXtreme speed and eXciting performance! 
+
+        All store items in this mod feature: 
+            - Double the Lifespan for Durability with Titanium Components
+            - Fine Tuned Pricing and Power Settings for Realism
+            - Realistic Power/Torque Curves, Gear Ratios and Speeds
+            - Highest Quality 3D Models from RedCat3D and ChaosDad1418
+        
+        Series 7X: 
+            - 420 HP / 313 KW
+            - 1325 LB-FT / 1796 NM
+            - 62 MPH / 100 KPH
+            - $300,000 USD
+
+        Series 8X: 
+            - 520 HP / 388 KW
+            - 1640 LB-FT / 2224 NM
+            - 62 MPH / 100 KPH
+            - $375,000 USD
+        
+        Series 9X: 
+            - 620 HP / 462 KW
+            - 1955 LB-FT / 2651 NM
+            - 62 MPH / 100 KPH
+            - $450,000 USD
+
+        Series 9X Bull: 
+            - 720 HP / 537 KW
+            - 2271 LB-FT / 3079 NM
+            - 62 MPH / 100 KPH
+            - $525,000 USD
+
+        TopLiner 4090X: 
+            - 400 HP / 298 KW
+            - 1261 LB-FT / 1710 NM
+            - 31 MPH / 50 KPH
+            - 12,500 Liter Capacity
+            - Doubled Unload Speed  
+            - $175,000 USD 
+
+        Header 4090X: 
+            - 15 MPH / 25 KPH
+            - $50,000 USD
+
+        Changelog:
+            - v2.0.0.0 
+                - Updated Models from RedCat3D & ChaosDad1418
+                - Adjusted Power Setting Edits
+                - New ModHub and Store Icons]]>
+        </en>
+    </description>
+    <iconFilename>icon.dds</iconFilename>
+    <multiplayer supported="true" />
+    <storeItems>
+        <storeItem xmlFilename="vehicles/series7X/series7.xml" />
+        <storeItem xmlFilename="vehicles/series8X/series8.xml" />
+        <storeItem xmlFilename="vehicles/series9X/series9.xml" />
+        <storeItem xmlFilename="vehicles/series9XBull/series9.xml" />
+        <storeItem xmlFilename="vehicles/topLiner4090X.xml" />
+        <storeItem xmlFilename="vehicles/header4090X.xml" />
+        <storeItem xmlFilename="vehicles/header4090XTrailer.xml" />
+    </storeItems>
+    <l10n>
+        <text name="configuration_interiorColor">
+            <en>Interior Color</en>
+            <de>Innenraumfarbe</de>
+        </text>
+        <text name="colorInteriorGreyD">
+            <en>Dark Gray</en>
+            <de>Dunkelgrau</de>
+        </text>
+        <text name="colorInteriorGrey">
+            <en>Light Gray</en>
+            <de>Hellgrau</de>
+        </text>
+        <text name="colorInteriorBeige">
+            <en>Beige</en>
+            <de>Beige</de>
+        </text>
+        <text name="colorJavagreen">
+            <en>Javagreen</en>
+            <de>Javagrün</de>
+        </text>
+        <text name="colorGreenMat">
+            <en>Green Matte</en>
+            <de>Mattgrün</de>
+        </text>
+        <text name="colorBlackMat">
+            <en>Black Matte</en>
+            <de>Mattschwarz</de>
+        </text>
+        <text name="configuration_lightsF">
+            <en>Lights Front</en>
+            <de>Lichter Vorn</de>
+        </text>
+        <text name="colorInteriorGreyH">
+            <en>Light Gray</en>
+            <de>Hellgrau</de>
+        </text>
+    </l10n>
+</modDesc>

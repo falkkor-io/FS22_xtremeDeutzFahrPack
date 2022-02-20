@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="cutter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name params="$l10n_storeItem_header">Topliner 4090X %s</name>
+        <specs>
+            <workingWidth>6.0</workingWidth>
+            <combination xmlFilename="vehicles/topLiner4090X/topLiner4090X.xml"/>
+            <combination xmlFilename="vehicles/header4090XTrailer/header4090XTrailer.xml"/>
+        </specs>
+        <functions>
+            <function>$l10n_function_cutter</function>
+        </functions>
+        <storePacks>
+            <storePack>STARTER_GRAINS</storePack>
+        </storePacks>
+        <image>$data/vehicles/deutzFahr/header4090/store_header4090.png</image>
+        <price>50000</price>
+        <lifetime>1200</lifetime>
+        <rotation>0</rotation>
+        <brand>DEUTZFAHR</brand>
+        <category>cutters</category>
+        <shopTranslationOffset>0 -0.039 0</shopTranslationOffset>
+        <shopRotationOffset>0.733 0 0</shopRotationOffset>
+        <vertexBufferMemoryUsage>2869020</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>460836</indexBufferMemoryUsage>
+        <textureMemoryUsage>2752480</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_cutter</typeDesc>
+        <filename>$data/vehicles/deutzFahr/header4090/header4090.i3d</filename>
+        <size width="7.5" length="4" lengthOffset="1" height="4.1" />
+        <speedLimit value="25" />
+        <components>
+            <component centerOfMass="0 0.2 0.3" solverIterationCount="10" mass="1700" />
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="COMBINE_HEADER" />
+        <mapHotspot type="CUTTER" />
+    </base>
+
+    <powerTakeOffs>
+        <input inputAttacherJointIndices="1" inputNode="ptoInputNode" aboveAttacher="true" detachNode="ptoDetachNode" ptoName="LEFT_PTO"/>
+    </powerTakeOffs>
+
+    <powerConsumer ptoRpm="470" neededMaxPtoPower="50"/>
+
+    <groundReferenceNodes>
+        <groundReferenceNode node="heightNode" threshold="0.3" />
+    </groundReferenceNodes>
+
+    <workAreas>
+        <workArea type="cutter" functionName="processCutterArea" >
+            <area startNode="workAreaStart" widthNode="workAreaWidth" heightNode="workAreaHeight" />
+            <groundReferenceNode index="1" />
+            <testAreas autoGenerate="true" zOffset="0.5" xOffset="0" length="0.6" numAreas="8" areaWidthScale="0.25"/>
+        </workArea>
+    </workAreas>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="cutter" >
+                <heightNode node="heightNode" />
+                <distanceToGround lower="0.27" upper="1.4" />
+            </inputAttacherJoint>
+        </inputAttacherJoints>
+    </attachable>
+
+    <connectionHoses>
+        <hose inputAttacherJointIndices="1" type="electric"     node="electric"       length="1.4" diameter="0.008" outgoingAdapter="DEFAULT" adapterType="NONE" socket="electric"/>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn"  node="hydraulicIn01"  length="1.4" diameter="0.015" outgoingAdapter="DEFAULT" adapterType="NONE" socket="hydraulic01"/>
+        <hose inputAttacherJointIndices="1" type="hydraulicOut" node="hydraulicOut01" length="1.4" diameter="0.015" outgoingAdapter="DEFAULT" adapterType="NONE" socket="hydraulic01"/>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn"  node="hydraulicIn02"  length="1.4" diameter="0.015" outgoingAdapter="DEFAULT" adapterType="NONE" socket="hydraulic01"/>
+    </connectionHoses>
+
+    <animations>
+        <animation name="turnedOnAnimation_bottomBlades" looping="true">
+            <part node="bladesDecal" startTime="0.0" endTime="0.5"  startTrans="0.03 0 0"  endTrans="-0.03 0 0" />
+            <part node="bladesDecal" startTime="0.5" endTime="1.0"  startTrans="-0.03 0 0" endTrans="0.03 0 0" />
+        </animation>
+
+        <animation name="turnedOnAnimation_canolaBlades" looping="true">
+            <part node="canolaExtension_lowKnifes" startTime="0" endTime="0.5" startTrans="0 0 0" endTrans="0.1 0 0"/>
+            <part node="canolaExtension_lowKnifes" startTime="0.5" endTime="1" startTrans="0.1 0 0" endTrans="0 0 0"/>
+
+            <part node="canolaExtension_sideKnifesRight01" startTime="0" endTime="0.5" startTrans="0 0 0" endTrans="0 -0.06 0"/>
+            <part node="canolaExtension_sideKnifesRight01" startTime="0.5" endTime="1" startTrans="0 -0.06 0" endTrans="0 0 0"/>
+            <part node="canolaExtension_sideKnifesRight02" startTime="0" endTime="0.5" startTrans="0 0 0" endTrans="0 0.06 0"/>
+            <part node="canolaExtension_sideKnifesRight02" startTime="0.5" endTime="1" startTrans="0 0.06 0" endTrans="0 0 0"/>
+
+            <part node="canolaExtension_sideKnifesLeft01" startTime="0" endTime="0.5" startTrans="0 0 0" endTrans="0 -0.06 0"/>
+            <part node="canolaExtension_sideKnifesLeft01" startTime="0.5" endTime="1" startTrans="0 -0.06 0" endTrans="0 0 0"/>
+            <part node="canolaExtension_sideKnifesLeft02" startTime="0" endTime="0.5" startTrans="0 0 0" endTrans="0 0.06 0"/>
+            <part node="canolaExtension_sideKnifesLeft02" startTime="0.5" endTime="1" startTrans="0 0.06 0" endTrans="0 0 0"/>
+        </animation>
+    </animations>
+
+    <cylindered>
+        <movingTools>
+            <movingTool node="reelMove" playSound="true" >
+                <controls axis="AXIS_CUTTER_REEL" invertAxis="false" mouseSpeedFactor="0.5" iconName="REEL_TRANSLATE_X" />
+                <translation transSpeed="0.2" transAcceleration="10" transMax="0" transMin="-0.2" translationAxis="3" startTrans="0"/>
+                <dependentPart node="reelMoveHydraulic" />
+            </movingTool>
+            <movingTool node="reelRot" playSound="true" >
+                <controls axis="AXIS_CUTTER_REEL2" invertAxis="true" mouseSpeedFactor="0.5" iconName="REEL_TRANSLATE_Y" />
+                <rotation rotSpeed="10" rotAcceleration="40" rotMax="-3" rotMin="-23" startRot="-23"/>
+                <dependentPart node="reelRotHydraulic" />
+            </movingTool>
+            <movingTool node="reel">
+                <dependentPart node="spike01"/>
+                <dependentPart node="spike02"/>
+                <dependentPart node="spike03"/>
+                <dependentPart node="spike04"/>
+                <dependentPart node="spike05"/>
+                <dependentPart node="spike06"/>
+            </movingTool>
+        </movingTools>
+
+        <movingParts>
+            <movingPart node="reelRotHydraulic" referencePoint="reelRotHydraulicRef" referenceFrame="reelRotHydraulicRef" >
+                <translatingPart node="reelRotHydraulicPunch" />
+            </movingPart>
+            <movingPart node="reelMoveHydraulic" referencePoint="reelMoveHydraulicRef" referenceFrame="reelMoveHydraulicRef" >
+                <translatingPart node="reelMoveHydraulicPunch" />
+            </movingPart>
+            <movingPart node="spike01" referenceFrame="header4090_main_component1"/>
+            <movingPart node="spike02" referenceFrame="header4090_main_component1"/>
+            <movingPart node="spike03" referenceFrame="header4090_main_component1"/>
+            <movingPart node="spike04" referenceFrame="header4090_main_component1"/>
+            <movingPart node="spike05" referenceFrame="header4090_main_component1"/>
+            <movingPart node="spike06" referenceFrame="header4090_main_component1"/>
+        </movingParts>
+
+        <sounds>
+            <hydraulic template="defaultHydraulicSound" pitchScale="1.2" volumeScale="1.0" fadeIn="0.1" fadeOut="0.05" linkNode="header4090_main_component1"/>
+        </sounds>
+    </cylindered>
+
+    <dynamicMount forceLimitScale="1" />
+
+    <cutter fruitTypeCategories="grainHeader">
+        <effect>
+            <effectNode effectClass="CutterMotionPathEffect" effectType="CUTTER" linkNode="cutterEffectLinkNode">
+                <motionPathEffect textureFilename="$data/vehicles/deutzFahr/header4090/drumArray.dds" numRows="32" rowLength="42" minFade="0.06" textureRealWidth="16" speedScale="0.16"/>
+            </effectNode>
+            <effectNode effectClass="ParticleEffect" effectNode="smokeEmitter" particleType="SMOKE" materialType="smokeParticle" emitCountScale="0.1" worldSpace="false" useCuttingWidth="false"/>
+        </effect>
+
+        <fruitExtraObjects>
+             <fruitExtraObject fruitType="canola" node="canolaExtension"/>
+             <fruitExtraObject fruitType="wheat" node="grainExtension" isDefault="true"/>
+             <fruitExtraObject fruitType="barley" node="grainExtension"/>
+             <fruitExtraObject fruitType="soybean" node="grainExtension"/>
+             <fruitExtraObject fruitType="oat" node="grainExtension"/>
+             <fruitExtraObject fruitType="sorghum" node="grainExtension"/>
+         </fruitExtraObjects>
+
+         <animationNodes>
+            <animationNode node="mainDrum" rotAxis="1" rotSpeed="1100" turnOnFadeTime="2" turnOffFadeTime="3"/>
+            <animationNode node="reel" rotSpeed="210" rotAxis="1" turnOnFadeTime="1" turnOffFadeTime="3"/>
+        </animationNodes>
+        <sounds>
+            <cut template="cropCutting" />
+        </sounds>
+    </cutter>
+
+    <turnOnVehicle turnedOnByAttacherVehicle="true">
+        <turnedOnAnimation name="turnedOnAnimation_bottomBlades" speedScale="8" turnOnFadeTime="2" turnOffFadeTime="3"/>
+        <turnedOnAnimation name="turnedOnAnimation_canolaBlades" speedScale="6" turnOnFadeTime="2" turnOffFadeTime="2"/>
+
+        <animationNodes>
+            <animationNode node="disc01" rotSpeed="250" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="disc02" rotSpeed="250" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="disc03" rotSpeed="250" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="disc04" rotSpeed="250" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2"/>
+            <animationNode node="chain"  rotSpeed="250" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="2" shaderComponentScale="0 1 0 0" shaderParameterName="offsetUV" />
+        </animationNodes>
+        <sounds>
+            <start template="HARVESTER_TOOL_START" volumeScale="1.5" />
+            <work template="HARVESTER_TOOL_WORK" volumeScale="1.5" />
+            <stop template="HARVESTER_TOOL_STOP" volumeScale="1.5" />
+        </sounds>
+    </turnOnVehicle>
+
+     <ai>
+        <areaMarkers leftNode="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack" />
+        <collisionTrigger node="aiCollisionNode" width="6.8" height="2.0"/>
+        <agentAttachment width="6.8" height="2.5" length="3" lengthOffset="1"/>
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-3.3" maxX="3.3" minZ="-0.4" maxZ="0.8" yOffset="0.2" />
+    </foliageBending>
+
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" fieldMultiplier="2"/>
+
+    <baseMaterial>
+        <material name="header4090_mat" baseNode="header4090_vis">
+            <shaderParameter name="colorMat0" value="DEUTZ_GREEN6"/>
+        </material>
+        <material name="canolaModules_mat" baseNode="canolaExtension">
+            <shaderParameter name="colorMat0" value="DEUTZ_GREEN6"/>
+        </material>
+    </baseMaterial>
+
+    <i3dMappings>
+        <i3dMapping id="header4090_main_component1" node="0>" />
+        <i3dMapping id="header4090_vis" node="0>0" />
+        <i3dMapping id="attacherJoint" node="0>0|0|0" />
+        <i3dMapping id="heightNode" node="0>0|0|1" />
+        <i3dMapping id="ptoInputNode" node="0>0|0|2" />
+        <i3dMapping id="ptoDetachNode" node="0>0|0|3" />
+        <i3dMapping id="hydraulicIn01" node="0>0|0|4|0" />
+        <i3dMapping id="hydraulicOut01" node="0>0|0|4|1" />
+        <i3dMapping id="hydraulicIn02" node="0>0|0|4|2" />
+        <i3dMapping id="electric" node="0>0|0|4|3" />
+        <i3dMapping id="reelRot" node="0>0|1|0" />
+        <i3dMapping id="reelMove" node="0>0|1|0|0|0" />
+        <i3dMapping id="reelMoveHydraulicRef" node="0>0|1|0|0|0|0" />
+        <i3dMapping id="reel" node="0>0|1|0|0|0|1|0" />
+        <i3dMapping id="spike01" node="0>0|1|0|0|0|1|0|0|0" />
+        <i3dMapping id="spike02" node="0>0|1|0|0|0|1|0|1|0" />
+        <i3dMapping id="spike03" node="0>0|1|0|0|0|1|0|2|0" />
+        <i3dMapping id="spike04" node="0>0|1|0|0|0|1|0|3|0" />
+        <i3dMapping id="spike05" node="0>0|1|0|0|0|1|0|4|0" />
+        <i3dMapping id="spike06" node="0>0|1|0|0|0|1|0|5|0" />
+        <i3dMapping id="reelRotHydraulicRef" node="0>0|1|0|1" />
+        <i3dMapping id="reelMoveHydraulic" node="0>0|1|0|2" />
+        <i3dMapping id="reelMoveHydraulicPunch" node="0>0|1|0|2|0" />
+        <i3dMapping id="mainDrum" node="0>0|1|1" />
+        <i3dMapping id="reelRotHydraulic" node="0>0|1|2" />
+        <i3dMapping id="reelRotHydraulicPunch" node="0>0|1|2|0" />
+        <i3dMapping id="disc01" node="0>0|1|3|0" />
+        <i3dMapping id="disc02" node="0>0|1|3|1" />
+        <i3dMapping id="disc03" node="0>0|1|3|2" />
+        <i3dMapping id="disc04" node="0>0|1|3|3" />
+        <i3dMapping id="chain" node="0>0|1|4" />
+        <i3dMapping id="bladesDecal" node="0>0|1|5" />
+        <i3dMapping id="workAreaStart" node="0>0|2|0" />
+        <i3dMapping id="workAreaWidth" node="0>0|2|1" />
+        <i3dMapping id="workAreaHeight" node="0>0|2|2" />
+        <i3dMapping id="aiMarkerLeft" node="0>0|3|0" />
+        <i3dMapping id="aiMarkerRight" node="0>0|3|1" />
+        <i3dMapping id="aiMarkerBack" node="0>0|3|2" />
+        <i3dMapping id="aiCollisionNode" node="0>0|3|3" />
+        <i3dMapping id="cutterEffectLinkNode" node="0>0|4|0" />
+        <i3dMapping id="smokeEmitter" node="0>0|4|1" />
+        <i3dMapping id="grainExtension" node="0>0|5|0" />
+        <i3dMapping id="canolaExtension" node="0>0|5|1" />
+        <i3dMapping id="canolaExtension_sideKnifesLeft01" node="0>0|5|1|0|0" />
+        <i3dMapping id="canolaExtension_sideKnifesLeft02" node="0>0|5|1|0|1" />
+        <i3dMapping id="canolaExtension_sideKnifesRight01" node="0>0|5|1|1|0" />
+        <i3dMapping id="canolaExtension_sideKnifesRight02" node="0>0|5|1|1|1" />
+        <i3dMapping id="canolaExtension_lowKnifes" node="0>0|5|1|2" />
+    </i3dMappings>
+</vehicle>

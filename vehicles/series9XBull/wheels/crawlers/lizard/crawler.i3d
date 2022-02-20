@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="crawler" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.2"/>
+  </Asset>
+
+  <Files>
+    <File fileId="12" filename="assetLibraryDecals_specular.dds"/>
+    <File fileId="8" filename="crawlerBelt_normal.dds"/>
+    <File fileId="9" filename="crawlerBelt_specular.dds"/>
+    <File fileId="2" filename="crawler_normal.dds"/>
+    <File fileId="3" filename="crawler_specular.dds"/>
+    <File fileId="4" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="10" filename="$data/shared/assets/assetLibraryDecals_diffuse.dds"/>
+    <File fileId="11" filename="$data/shared/assets/assetLibraryDecals_normal.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="assetLibraryDecals_mat" materialId="6" customShaderId="4" customShaderVariation="colorMask">
+      <Texture fileId="10"/>
+      <Normalmap fileId="11"/>
+      <Glossmap fileId="12"/>
+      <CustomParameter name="RDT" value="0 0 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.7519 0.344 0.0528 0"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="crawler_mat" materialId="4" diffuseColor="0.498039 0.498039 0.498039 1" customShaderId="4" customShaderVariation="colorMask">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="0 0 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.9157 0.9157 0.9157 0"/>
+      <CustomParameter name="colorMat1" value="0.7519 0.344 0.0528 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="crawlerBelt_mat" materialId="5" diffuseColor="0.498039 0.498039 0.498039 1" customShaderId="4" customShaderVariation="uvScroll_colorMask">
+      <Normalmap fileId="8"/>
+      <Glossmap fileId="9"/>
+      <CustomParameter name="RDT" value="0 0 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="offsetUV" value="0 0 0 0"/>
+      <CustomParameter name="colorMat0" value="0.0278 0.0254 0.0231 5"/>
+      <CustomParameter name="colorMat1" value="0.0278 0.0254 0.0231 5"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="crawler.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <TransformGroup name="_01_" nodeId="90">
+        <Shape shapeId="1" name="crawlerRight" clipDistance="300" nodeId="91" materialIds="4" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="2" name="beltRight" translation="0.211 0 0" clipDistance="300" nodeId="92" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="3" name="mainWheelRight" translation="0.0121282 0.244093 -0.0134058" clipDistance="300" nodeId="93" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="4" name="screws" translation="-0.164151 -9.15527e-07 2.28882e-07" clipDistance="50" nodeId="94" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="5" name="supportWheelRight1" translation="-0.0672 -0.6022 0.8804" clipDistance="300" nodeId="95" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="6" name="screws" translation="0.321039 4.26025e-06 2.89246e-05" clipDistance="50" nodeId="96" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="7" name="supportWheelRight2" translation="-0.0672 -0.627 -0.8952" clipDistance="300" nodeId="97" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="8" name="screws" translation="0.32104 1.0788e-05 4.56573e-05" clipDistance="50" nodeId="98" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="9" name="supportWheelRight3" translation="-0.0672411 -0.754985 0.370512" clipDistance="300" nodeId="99" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="10" name="supportWheelRight4" translation="-0.0672411 -0.760241 -0.00588745" clipDistance="300" nodeId="100" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="11" name="supportWheelRight5" translation="-0.0672411 -0.765498 -0.382369" clipDistance="300" nodeId="101" materialIds="4" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="12" name="crawlerLeft" clipDistance="300" nodeId="102" materialIds="4" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="13" name="beltLeft" clipDistance="300" nodeId="103" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="14" name="mainWheelLeft" translation="0.0520859 0.244093 -0.0134055" clipDistance="300" nodeId="104" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="15" name="screws" translation="0.0943839 5.96046e-10 -6.10352e-07" clipDistance="50" nodeId="105" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="16" name="supportWheelLeft1" translation="0.0617 -0.627 -0.8952" clipDistance="300" nodeId="106" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="17" name="screws" translation="-0.321093 1.0788e-05 4.51996e-05" clipDistance="50" nodeId="107" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="18" name="supportWheelLeft2" translation="0.0617 -0.6022 0.8804" clipDistance="300" nodeId="108" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="19" name="screws" translation="-0.321093 4.22211e-06 2.86957e-05" clipDistance="50" nodeId="109" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="20" name="supportWheelLeft3" translation="0.0616879 -0.765498 -0.38237" clipDistance="300" nodeId="110" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="21" name="supportWheelLeft4" translation="0.0616879 -0.760241 -0.00588791" clipDistance="300" nodeId="111" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="22" name="supportWheelLeft5" translation="0.0616879 -0.754985 0.370511" clipDistance="300" nodeId="112" materialIds="4" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+      </TransformGroup>
+      <TransformGroup name="_02_" nodeId="113">
+        <Shape shapeId="23" name="crawlerRight" clipDistance="300" nodeId="114" materialIds="4" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="24" name="beltRight" translation="-0.0103169 0.334058 0.90554" clipDistance="300" nodeId="115" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="25" name="mainWheelRight" translation="0.00409508 0.598129 0.909654" clipDistance="300" nodeId="116" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="26" name="screws" translation="-0.0241944 -0.00101538 6.30569e-05" clipDistance="50" nodeId="117" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="27" name="supportWheelRight1" clipDistance="300" nodeId="118" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="28" name="screws" translation="-0.327915 1.80435e-05 -8.54492e-06" clipDistance="50" nodeId="119" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="29" name="supportWheelRight2" translation="0 9.57489e-06 1.80249" clipDistance="300" nodeId="120" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="30" name="screws" translation="-0.327915 8.564e-06 1.81198e-05" clipDistance="50" nodeId="121" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="31" name="supportWheelRight3" translation="0.00347427 -0.201922 1.26889" clipDistance="300" nodeId="122" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="32" name="supportWheelRight4" translation="0.00347427 -0.201922 0.900768" clipDistance="300" nodeId="123" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="33" name="supportWheelRight5" translation="0.00347427 -0.201922 0.529441" clipDistance="300" nodeId="124" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="34" name="screws" translation="0 0.36499 0.910826" clipDistance="50" nodeId="125" materialIds="6" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="35" name="crawlerLeft" clipDistance="300" nodeId="126" materialIds="4" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="36" name="beltLeft" translation="0.010317 0.334058 0.90554" clipDistance="300" nodeId="127" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="37" name="mainWheelLeft" translation="-0.00409508 0.598129 0.909654" clipDistance="300" nodeId="128" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="38" name="screws" translation="0.0859177 -0.00101543 6.30569e-05" clipDistance="50" nodeId="129" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="39" name="supportWheelLeft1" translation="1.41553e-16 9.63211e-06 1.80249" clipDistance="300" nodeId="130" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="40" name="screws" translation="-0.260791 2.86865e-05 3.87192e-05" clipDistance="50" nodeId="131" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="41" name="supportWheelLeft2" clipDistance="300" nodeId="132" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="42" name="screws" translation="-0.260791 3.87192e-05 -2.89917e-05" clipDistance="50" nodeId="133" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="43" name="supportWheelLeft3" translation="-0.00347427 -0.201922 0.529441" clipDistance="300" nodeId="134" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="44" name="supportWheelLeft4" translation="-0.00347427 -0.201922 0.900768" clipDistance="300" nodeId="135" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="45" name="supportWheelLeft5" translation="-0.00347427 -0.201922 1.26889" clipDistance="300" nodeId="136" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="46" name="screws" translation="0 0.135615 0.877672" clipDistance="50" nodeId="137" materialIds="6" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+      </TransformGroup>
+      <TransformGroup name="_03_" nodeId="138">
+        <Shape shapeId="47" name="crawlerRight" clipDistance="300" nodeId="139" materialIds="4" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="48" name="beltRight" translation="-0.000697174 0.387265 1.02206" clipDistance="300" nodeId="140" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="49" name="mainWheelRight" translation="-0.0232624 0.689472 1.00622" clipDistance="300" nodeId="141" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="50" name="supportWheelRight1" translation="0 0 2.04035" clipDistance="300" nodeId="142" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="51" name="screws1" translation="0 -0.000356941 -5.34058e-07" clipDistance="50" nodeId="143" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="52" name="supportWheelRight2" clipDistance="300" nodeId="144" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="53" name="screws" translation="0 -0.000356941 -0.000112801" clipDistance="50" nodeId="145" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="54" name="supportWheelRight3" translation="-7.62939e-08 -0.180161 1.57218" clipDistance="300" nodeId="146" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="55" name="supportWheelRight4" translation="-7.62939e-08 -0.180161 1.20726" clipDistance="300" nodeId="147" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="56" name="supportWheelRight5" translation="-7.62939e-08 -0.180161 0.845409" clipDistance="300" nodeId="148" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="57" name="supportWheelRight6" translation="-7.62939e-08 -0.180161 0.480483" clipDistance="300" nodeId="149" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="58" name="screws" translation="0 0.0803 1.02012" clipDistance="50" nodeId="150" materialIds="6" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="59" name="crawlerLeft" clipDistance="300" nodeId="151" materialIds="4" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="60" name="beltRight" translation="0.000697174 0.387265 1.02206" clipDistance="300" nodeId="152" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="61" name="mainWheelRight" translation="0.0232624 0.689472 1.00622" clipDistance="300" nodeId="153" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="62" name="supportWheelRight1" translation="0 0 2.04035" clipDistance="300" nodeId="154" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="63" name="screws" translation="0 -0.000356941 -5.34058e-07" clipDistance="50" nodeId="155" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="64" name="supportWheelRight2" clipDistance="300" nodeId="156" materialIds="4" castsShadows="true" receiveShadows="true">
+            <Shape shapeId="65" name="screws2" translation="0 -0.000356941 -0.000112801" clipDistance="50" nodeId="157" materialIds="6" castsShadows="true" receiveShadows="true"/>
+          </Shape>
+          <Shape shapeId="66" name="supportWheelRight3" translation="7.62939e-08 -0.180161 1.57218" clipDistance="300" nodeId="158" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="67" name="supportWheelRight4" translation="7.62939e-08 -0.180161 1.20726" clipDistance="300" nodeId="159" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="68" name="supportWheelRight5" translation="7.62939e-08 -0.180161 0.845409" clipDistance="300" nodeId="160" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="69" name="supportWheelRight6" translation="7.62939e-08 -0.180161 0.480483" clipDistance="300" nodeId="161" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="70" name="screws" translation="0 0.0803 1.02012" clipDistance="50" nodeId="162" materialIds="6" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+      </TransformGroup>
+      <TransformGroup name="_04_" nodeId="163">
+        <Shape shapeId="71" name="crawlerRight" clipDistance="300" nodeId="164" materialIds="4" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="72" name="beltRight" translation="-9.26318e-08 -2.52886e-07 -1.27323e-06" clipDistance="300" nodeId="165" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="73" name="supportWheelRight1" translation="0 -2.19345e-07 1.83619" clipDistance="300" nodeId="166" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="74" name="supportWheelRight2" clipDistance="300" nodeId="167" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="75" name="supportWheelRight3" translation="-0.00374115 -0.302362 1.13146" clipDistance="300" nodeId="168" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="76" name="supportWheelRight4" translation="-0.00374115 -0.302362 0.716301" clipDistance="300" nodeId="169" materialIds="4" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="77" name="crawlerLeft" clipDistance="300" nodeId="170" materialIds="4" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="78" name="beltLeft" clipDistance="300" nodeId="171" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="79" name="supportWheelLeft1" clipDistance="300" nodeId="172" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="80" name="supportWheelLeft2" translation="0 -2.28882e-07 1.83619" clipDistance="300" nodeId="173" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="81" name="supportWheelLeft3" translation="0.00374115 -0.302362 0.716301" clipDistance="300" nodeId="174" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="82" name="supportWheelLeft4" translation="0.00374115 -0.302362 1.13146" clipDistance="300" nodeId="175" materialIds="4" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+      </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="127">
+      <Attribute name="shaderParameter" type="string" value="1.0 1.0 20.0 5.0"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

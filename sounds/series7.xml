@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<sounds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../shared/xml/schema/vehicle_sounds.xsd">
+    <motorized>
+        <sounds>
+            <motor template="engineMedium" file="$data/vehicles/deutzFahr/series7/sounds/series7_loop.gls" volumeScale="1.25" />
+            <motor template="indoorCabinRumble" />
+            <gearbox file="$data/sounds/vehicles/transmission/transmissionLoop.wav" pitchScale="0.9" volumeScale="0.28" innerRadius="5.0" outerRadius="80.0">
+                <volume indoor="0.65" outdoor="1.5">
+                    <modifier type="SPEED" value="4.0" modifiedValue="0.0" />
+                    <modifier type="SPEED" value="30.0" modifiedValue="1.0" />
+                    <modifier type="SPEED" value="60.0" modifiedValue="1.0" />
+                    <modifier type="SPEED" value="120.0" modifiedValue="1.4" />
+
+                    <modifier type="MOTOR_LOAD" value="-1.00" modifiedValue="1.0" />
+                    <modifier type="MOTOR_LOAD" value="0.00" modifiedValue="1.0" />
+                    <modifier type="MOTOR_LOAD" value="0.20" modifiedValue="1.0" />
+                    <modifier type="MOTOR_LOAD" value="0.45" modifiedValue="2.0" />
+                    <modifier type="MOTOR_LOAD" value="0.80" modifiedValue="1.0" />
+                    <modifier type="MOTOR_LOAD" value="1.00" modifiedValue="0.7" />
+
+                    <modifier type="DRIVING_DIRECTION" value="-1.0" modifiedValue="1.5" />
+                    <modifier type="DRIVING_DIRECTION" value="0.00" modifiedValue="0.0" />
+                    <modifier type="DRIVING_DIRECTION" value="1.00" modifiedValue="1.0" />
+                </volume>
+                <pitch indoor="1.80" outdoor="1.77">
+                    <modifier type="SPEED" value="0.0" modifiedValue="0.3" />
+                    <modifier type="SPEED" value="60.0" modifiedValue="0.8" />
+                    <modifier type="SPEED" value="120.0" modifiedValue="1.3" />
+
+                    <modifier type="SUSPENSION" value="-1.0" modifiedValue="0.9" />
+                    <modifier type="SUSPENSION" value="-0.5" modifiedValue="0.95" />
+                    <modifier type="SUSPENSION" value="0.0" modifiedValue="1.0" />
+                    <modifier type="SUSPENSION" value="0.5" modifiedValue="1.05" />
+                    <modifier type="SUSPENSION" value="1.0" modifiedValue="1.1" />
+
+                    <modifier type="DRIVING_DIRECTION" value="-1.0" modifiedValue="1.8" />
+                    <modifier type="DRIVING_DIRECTION" value="0.00" modifiedValue="1.0" />
+                    <modifier type="DRIVING_DIRECTION" value="1.00" modifiedValue="1.0" />
+                </pitch>
+
+                <lowpassGain indoor="0.3" outdoor="1.0" />
+                <lowpassCutoffFrequency indoor="700" outdoor="20000.0" />
+                <lowpassResonance indoor="1.0" outdoor="1.0" />
+            </gearbox>
+            <compressedAir template="compressedAir" />
+            <airCompressorRun template="brakeCompressorMedium" volumeScale="0.8" />
+            <airCompressorStop template="compressedAir" />
+        </sounds>
+    </motorized>
+
+    <lights>
+        <sounds>
+            <toggleLights template="SWITCH_01" />
+            <turnLight template="SWITCH_TURNLIGHT" />
+        </sounds>
+    </lights>
+
+    <attacherJoints>
+        <sounds>
+            <attach template="ATTACH_01" />
+            <hydraulic template="defaultHydraulicSound" />
+        </sounds>
+    </attacherJoints>
+
+    <drivable>
+        <sounds>
+            <waterSplash template="WATER_SPLASH_01" />
+        </sounds>
+    </drivable>
+
+    <honk>
+        <sound template="hornDefault" />
+    </honk>
+</sounds>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomShader version="5">
+    <Parameters>
+        <Parameter name = "blinkOffset"  target = "blinkOffset"  type = "float4" group="blink" defaultValue = "0 0 0 0"            minValue = "0 0 0 0" maxValue = "1 1 1 1"/>
+        <Parameter name = "lightControl" target = "lightControl" type = "float4" group="base"  defaultValue = "0.0 0 0 0"/>
+        <Parameter name = "baseColor"    target = "baseColor"    type = "float4" group="base"  defaultValue = "0.01 0.01 0.01 0.0" minValue = "0 0 0 0" maxValue = "1 1 1 1"/>
+        <Parameter name = "emitColor"    target = "emitColor"    type = "float4" group="base"  defaultValue = "1.0 0.0 0.0 0.0"    minValue = "0 0 0 0" maxValue = "1 1 1 1"/>
+    </Parameters>
+    <UvUsages/>
+    <Variations>
+        <Variation name = "BLINK" groups="base blink">
+<![CDATA[
+    #define BLINK
+]]>
+        </Variation>
+    </Variations>
+    <LodLevel startDistance="0" alphaForceMode = "use">
+        <CodeInjections>
+            <CodeInjection position = "OBJECT_PARAMETERS">
+<![CDATA[
+#if defined( BLINK )
+    float4 blinkOffset;
+#endif
+    float4 lightControl;
+    float4 baseColor;
+    float4 emitColor;
+]]>
+            </CodeInjection>
+            <CodeInjection position="VS_OUTPUT">
+<![CDATA[
+float mVisScale : TEXCOORDn;
+]]>
+            </CodeInjection>
+            <CodeInjection position="VS_END">
+<![CDATA[
+    float visScale = 1.0;
+#if defined( BLINK )
+    // slower blinking + variation to achieve different ratio between on and off state
+    float pi = 3.14159265359;
+    visScale *= saturate(cos( 7.0 * cTime_s + 2 * pi * object.blinkOffset.x ) + 0.2);
+#endif
+    Out.mVisScale = visScale;
+]]>
+            </CodeInjection>
+            <CodeInjection position = "POST_DIFFUSE_COLOR_FS">
+<![CDATA[
+    float mEmitGradient  = diffuseColor.r;
+    float mEmitAlpha     = diffuseColor.g;
+    float3 mColor = lerp(object.baseColor.rgb, float3(0.001,0.001,0.001), saturate(object.lightControl.x*In.vs.mVisScale));
+    diffuseColor.rgb     = mEmitGradient*mColor;
+]]>
+            </CodeInjection>
+            <CodeInjection position="POST_GLOSS_COLOR_FS">
+<![CDATA[
+#if defined( SPECULAR ) && defined( ALPHA_BLENDED )
+    #undef SPECULAR // Disable specular color for alphaBlended billboards
+#endif
+]]>
+            </CodeInjection>
+            <CodeInjection position="EMISSIVE_FS">
+<![CDATA[
+    emissiveColor.rgb = mEmitGradient*object.emitColor.rgb;
+    #if defined( BLINK )
+        emissiveColor.rgb  *= In.vs.mVisScale;
+    #endif
+    emissiveColor *= object.lightControl.x;
+    emissiveColor *= mEmitAlpha;
+]]>
+            </CodeInjection>
+            <CodeInjection position="ALPHA_FS">
+<![CDATA[
+#if defined( ALPHA_BLENDED )
+    reflectingLightingScale = alpha;
+#endif
+]]>
+            </CodeInjection>
+        </CodeInjections>
+    </LodLevel>
+</CustomShader>
