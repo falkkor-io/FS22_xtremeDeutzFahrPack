@@ -1,5 +1,7 @@
 ## This mod pack for Farming Simulator 22 features your favorite Deutz-Fahr machinery but now enhanced with eXtra power, eXtreme speed and eXciting performance! 
 
+![Xtreme Deutz-Fahr Pack Screenshot](/screenshots/xtreme_deutzfahr_screen1.jpg)
+
 ```
 All store items in this mod feature: 
     - Double the Lifespan for Durability with Titanium Components
