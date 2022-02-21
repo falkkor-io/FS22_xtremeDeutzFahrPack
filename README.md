@@ -1,7 +1,7 @@
 # Xtreme Deutz-Fahr Pack
 ### This mod pack for Farming Simulator 22 features your favorite Deutz-Fahr machinery but now enhanced with eXtra power, eXtreme speed and eXciting performance! 
 
-#### Latest version can be downloaded here: [v1.2.0.0](https://falkkor.io/FS22_xtremeDeutzFahrPack.zip)
+#### Latest version can be downloaded here: [v2.0.0.0](https://falkkor.io/FS22_xtremeDeutzFahrPack.zip)
 
 ![Xtreme Deutz-Fahr Pack Screenshot](/screenshots/xtreme_deutzfahr_screen1.jpg)
 
